@@ -170,8 +170,8 @@ class PlaintextMsg(Message):
         Succesfully tested on pyCharm.
         '''
         ##  Generates a random binary string to be used as a key
-        #   @param binaryString,a string with binary numbers
-        #   @return key, a randomly generated binary string containing zeros and ones
+        #   param binaryString,a string with binary numbers
+        #   return key, a randomly generated binary string containing zeros and ones
         def generateKey(binaryString):
             key = ""
             for i in range(len(binaryString)):
@@ -180,9 +180,9 @@ class PlaintextMsg(Message):
             return key
 
         ##  Calculates the XOR value of two binary numebrs and adds it to a binary string
-        #   @param binaryA, a string with binary numbers
-        #   @param binaryB, a string with binary numbers
-        #   @return newBinary, a string containing all the XOR'd values of binaryA and binaryB
+        #   param binaryA, a string with binary numbers
+        #   param binaryB, a string with binary numbers
+        #   return newBinary, a string containing all the XOR'd values of binaryA and binaryB
         def exor(binaryA, binaryB):
             newBinary = ""
             for i in range(len(binaryA)):
@@ -190,9 +190,9 @@ class PlaintextMsg(Message):
             return newBinary
 
         ##  Takes two binary numbers and perfroms a binary "AND" to it, adds the result to a new binary string
-        #   @param binary, a string with binary numbers
-        #   @param key, a string with binary numbers, used for round functions
-        #   @return newBinary, a string containing all the AND'd values of binaryA and binaryB
+        #   param binary, a string with binary numbers
+        #   param key, a string with binary numbers, used for round functions
+        #   return newBinary, a string containing all the AND'd values of binaryA and binaryB
         def roundFunction(binary, key):
             newBinary = ""
             for i in range(len(binary)):
@@ -200,13 +200,13 @@ class PlaintextMsg(Message):
             return newBinary
 
         ##  Encrypts the message using a feistel cipher algorithem
-        #   @param L, left half of the user's binary string
-        #   @param R, right half of the user's binary string
-        #   @param firstKey, a randomly generated binary string, used in round functions
-        #   @param secondKey, a randomly generated binary string, used in round functions
-        #   @return L3, a encoded version of the left half of the user's binary string
-        #   @return R3, a encoded version of the right half of the user's binary string
-        #   @return binaryMessage, an addition of both R3 and L3 as one string
+        #   param L, left half of the user's binary string
+        #   param R, right half of the user's binary string
+        #   param firstKey, a randomly generated binary string, used in round functions
+        #   param secondKey, a randomly generated binary string, used in round functions
+        #   return L3, a encoded version of the left half of the user's binary string
+        #   return R3, a encoded version of the right half of the user's binary string
+        #   return binaryMessage, an addition of both R3 and L3 as one string
         def feistelEncrypt(L, R, firstKey, secondKey):
             # First round of encryption
             f1 = roundFunction(R, firstKey)
@@ -477,9 +477,9 @@ class CiphertextMsg(Message):
     def productDecyrpt(self, encryptedData):
 
         ##  Calculates the XOR value of two binary numebrs and adds it to a binary string
-        #   @param binaryA, a string containing only zeros and ones
-        #   @param binaryB, a string containing only zeros and ones
-        #   @return newBinary, a string containing all the XOR'd values of binaryA and binaryB
+        #   param binaryA, a string containing only zeros and ones
+        #   param binaryB, a string containing only zeros and ones
+        #   return newBinary, a string containing all the XOR'd values of binaryA and binaryB
         def exor(binaryA, binaryB):  # Used in product encryption/decryption
             newBinary = ""
             for i in range(len(binaryA)):
@@ -487,9 +487,9 @@ class CiphertextMsg(Message):
             return newBinary
 
         ##  Takes two binary numbers and perfroms a binary "AND" to it, add the result to a binary string
-        #   @param binary, a string containing only zeros and ones
-        #   @param key, a string containing only zeros and ones
-        #   @return newBinary, a string containing all the AND'd values of binaryA and binaryB
+        #   param binary, a string containing only zeros and ones
+        #   param key, a string containing only zeros and ones
+        #   return newBinary, a string containing all the AND'd values of binaryA and binaryB
         def roundFunction(binary, key):  # Used in product encryption/decryption
             newBinary = ""
             for i in range(len(binary)):
@@ -497,13 +497,13 @@ class CiphertextMsg(Message):
             return newBinary
 
         ##  Encrypts the message using a feistel cipher algorithem
-        #   @param L, left side of the user's binary string
-        #   @param R, right side of the user's binary string
-        #   @param firstKey, a randomly generated binary string
-        #   @param secondKey, a randomly generated binary string
-        #   @return L3, a decoded version of the left side of the user's binary string
-        #   @return R3, a decoded version of the right side of the user's binary string
-        #   @return binaryMessage, an addition of both R3 and L3 as one string
+        #   param L, left side of the user's binary string
+        #   param R, right side of the user's binary string
+        #   param firstKey, a randomly generated binary string
+        #   param secondKey, a randomly generated binary string
+        #   return L3, a decoded version of the left side of the user's binary string
+        #   return R3, a decoded version of the right side of the user's binary string
+        #   return binaryMessage, an addition of both R3 and L3 as one string
         def feistelDecrypt(L, R, firstKey, secondKey):
             # First round of decryption
             f1 = roundFunction(L, secondKey)
