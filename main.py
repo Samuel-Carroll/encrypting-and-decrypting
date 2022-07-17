@@ -2,7 +2,7 @@
 Programmer Samuel Carroll (100783547)
 Project: Encryption/Decryption Algorithems
 Course Code: 202101 - Obj Oriented Programming IT - 74917
-Description: This program will ask the user for a message and then randomly encrypt and decrypt it using one of six cyphers. The program will then display to the user the encrypted and decrypted messages along with the cipher chosen. It'll indefinitly repeat until the user types in "stop", in which it'll show all encrypted and decrypted messages along with the ciphers used for each message.
+Description: This program will ask the user for a message and then randomly encrypt and decrypt it using one of seven cyphers. The program will then display to the user the encrypted and decrypted messages along with the cipher chosen. It'll indefinitly repeat until the user types in "stop", in which it'll show all encrypted and decrypted messages along with the ciphers used for each message.
 Date Created: March 20 2021
 Date Last Updated: March 31 2021
 """
